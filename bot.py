@@ -5,20 +5,12 @@ token = '5729426425:AAEN1FvNh6cLhS92fAcSfDxH5LgCyHbQ998'
 bot_username='denisero_bot'
 bot = telebot.TeleBot(f'{token}')
 
-qiwi = '79256986462'
-payeer = 'P1052746270'
-card = '4890494771753324'
-
-user_id = '262581194'
-money_balance = 0
-ref_users = 0
 
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 players = types.KeyboardButton('Игроки')
 cards = types.KeyboardButton('Карточки')
 games = types.KeyboardButton('Игры')
 stickers = types.KeyboardButton('Стикеры')
-# instruction = types.KeyboardButton('Инструкция')
 markup.add(players, cards, games, stickers)
 
 @bot.message_handler(commands=['start'])
