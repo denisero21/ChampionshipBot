@@ -42,9 +42,7 @@ markup.add(players, cards, games, stickers)
 
 @dp.message_handler()
 async def echo(message: types.Message):
-    await message.answer(message.chat.id, 
-        text=f"Привет, дружочек, ты находишься в главном меню.",
-        reply_markup=markup)
+    await message.answer(message.text)
 
 
 logging.basicConfig(level=logging.INFO)
