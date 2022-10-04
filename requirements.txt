@@ -14,3 +14,5 @@ attrs==21.4.0
 autobahn==22.4.2
 Automat==20.2.0
 whitenoise==6.1.0
+asyncpg==0.26.0
+gunicorn==20.1.0

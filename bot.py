@@ -32,11 +32,19 @@ async def on_shutdown(dispatcher):
     await bot.delete_webhook()
 
 
+markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+players = types.KeyboardButton('Игроки')
+cards = types.KeyboardButton('Карточки')
+games = types.KeyboardButton('Игры')
+stickers = types.KeyboardButton('Стикеры')
+markup.add(players, cards, games, stickers)
+
+
 @dp.message_handler()
 async def echo(message: types.Message):
-    await message.answer(message.text)
-
-
+    await message.answer(message.chat.id, 
+        text=f"Привет, дружочек, ты находишься в главном меню.",
+        reply_markup=markup)
 
 
 logging.basicConfig(level=logging.INFO)
