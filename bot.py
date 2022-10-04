@@ -73,19 +73,19 @@ async def players_func(message: types.Message):
     main = types.InlineKeyboardButton(text='Вернуться в главное меню', callback_data='main')
     inline_markup.add(koz, kava, den, sham, victor, orange, dmitriy, flesh, litosh, ferb, iceman, fadeev,
         legend, luba, bread, danilov, kreed, schegrin, solovyan, maks, busel, nikolas, shenets, main)
-    await message.reply('Выбирай своего кумира и смотри его статистику.', reply_markup=inline_markup)
+    await message.answer('Выбирай своего кумира и смотри его статистику.', reply_markup=inline_markup)
 
 @dp.message_handler(lambda message: message.text == 'Карточки')
 async def cards_func(message: types.Message):
-    await message.reply('Скоро..', reply_markup=markup)
+    await message.answer('Скоро..', reply_markup=markup)
 
 @dp.message_handler(lambda message: message.text == 'Игры')
 async def games_func(message: types.Message):
-    await message.reply('Игры пока в режиме разработки, жди обновлений, братишка.', reply_markup=markup)
+    await message.answer('Игры пока в режиме разработки, жди обновлений, братишка.', reply_markup=markup)
 
 @dp.message_handler(lambda message: message.text == 'Стикеры')
 async def stickers_func(message: types.Message):
-    await message.reply('Стикеры пока в режиме разработки, жди обновлений, братишка.', reply_markup=markup)
+    await message.answer('Стикеры пока в режиме разработки, жди обновлений, братишка.', reply_markup=markup)
 
 
 #callbacks
