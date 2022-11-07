@@ -33,6 +33,7 @@ async def on_shutdown(dispatcher):
 
 
 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+seasons = types.KeyboardButton('Сезоны')
 players = types.KeyboardButton('Игроки')
 cards = types.KeyboardButton('Карточки')
 games = types.KeyboardButton('Игры')
@@ -43,6 +44,18 @@ markup.add(players, cards, games, stickers)
 @dp.message_handler(commands='start')
 async def start(message: types.Message):
     await message.answer('Привет, дружочек, ты находишься в главном меню.', reply_markup=markup)
+
+@dp.message_handler(lambda message: message.text == 'Сезоны')
+async def start(message: types.Message):
+    inline_markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    champ = types.KeyboardButton('Чемпионат')
+    cup = types.KeyboardButton('Кубок')
+    back = types.KeyboardButton('Назад')
+    await message.edit_reply_markup(reply_markup=inline_markup)
+
+@dp.message_handler(lambda message: message.text == 'Назад')
+async def start(message: types.Message):
+    await message.edit_reply_markup(reply_markup=markup)
 
 @dp.message_handler(lambda message: message.text == 'Игроки')
 async def players_func(message: types.Message):
