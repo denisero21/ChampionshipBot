@@ -38,7 +38,7 @@ players = types.KeyboardButton('Игроки')
 cards = types.KeyboardButton('Карточки')
 games = types.KeyboardButton('Игры')
 stickers = types.KeyboardButton('Стикеры')
-markup.add(players, cards, games, stickers)
+markup.add(seasons, players, cards, games, stickers)
 
 
 @dp.message_handler(commands='start')
@@ -51,6 +51,7 @@ async def start(message: types.Message):
     champ = types.KeyboardButton('Чемпионат')
     cup = types.KeyboardButton('Кубок')
     back = types.KeyboardButton('Назад')
+    inline_markup.add(champ, cup, back)
     await message.edit_reply_markup(reply_markup=inline_markup)
 
 @dp.message_handler(lambda message: message.text == 'Назад')
