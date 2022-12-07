@@ -6,13 +6,13 @@ from aiogram.utils.executor import start_webhook
 from aiogram import Bot, types
 
 
-TOKEN = os.getenv('BOT_TOKEN')
+TOKEN = '5729426425:AAEN1FvNh6cLhS92fAcSfDxH5LgCyHbQ998'
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 
-HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME')
+HEROKU_APP_NAME = 'championship-bot'
 
 # webhook settings
 WEBHOOK_HOST = f'https://{HEROKU_APP_NAME}.herokuapp.com'
